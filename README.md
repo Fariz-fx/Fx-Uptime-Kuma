@@ -16,30 +16,30 @@ refer below steps
 ### Docker Installation in Linux
 
 1. Install Docker in Linux
-'''
+```bash
 sudo apt install docker.io -y
-'''
+```
 2. Install Docker Compose
-'''
+```bash
 sudo apt install docker-compose -y
-'''
+```
 
 ## Testing Locally
 
 In Terminal type below command
-'''
+```bash
 sudo docker-compose up -d
-'''
+```
 To check the status in terminal, use below command
-'''
+```bash
 sudo docker ps
-'''
+```
 Navigate to ip address of the container with Port: 3001
 By default Link: 0.0.0.0:3001
 
 ### To Bring it down
 
 Use the below command to bring it down
-'''
+```bash
 sudo docker-compose down
-'''
+```
