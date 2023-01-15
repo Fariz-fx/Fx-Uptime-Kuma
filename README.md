@@ -8,10 +8,10 @@ Check the above link for Features and updates
 ## Prerequisite
 
 **Docker** needs to be installed on your system. If it's not installed, 
-If you are interested in downloading docker refer the above repo and follow those steps for local testing
+- If you are not interested to download docker <a href= https://github.com/louislam/uptime-kuma> Click this</a> and follow those steps for local testing
 
-If you are ready install Docker
-refer below steps
+- If you are ready install Docker
+- Refer below steps
 
 ### Docker Installation in Linux
 
