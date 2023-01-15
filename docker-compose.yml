@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+  app-fx-uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: fx-uptime-kuma
+    volumes:
+      - ./fx-uptime-kuma-data:/app/data #volume location can be changed
+    ports:
+      - 3001:3001 #3001:3001
+    restart: always
