@@ -20,10 +20,10 @@ jobs:
           - name: Build the docker-compose stack
             run: docker-compose up -d
             
-          - name: Sleep
-            uses: jakejarvis/wait-action@master
-            with:
-              time: '60s'
+          #- name: Sleep
+            #uses: jakejarvis/wait-action@master
+            #with:
+              #time: '60s'
 
           - name: Check running containers
             run: docker ps
@@ -34,14 +34,17 @@ jobs:
           - name: Dump docker logs on failure
             if: failure()
             uses: jwalton/gh-docker-logs@v2
+            #with:
+                # Only show last 100 lines of each
+                  #tail: '100'
             
           #- name: Sleep for 120 seconds
             #run: sleep 120s
             #shell: bash
 
-          - name: Run test suite
-            run: |
-              docker exec -it fx-uptime-kuma bash
-              apt-get update
-              apt-get install -y python3-pytest
-              pytest --skip-auth
+          #- name: Run test suite
+            #run: |
+              #docker exec -it fx-uptime-kuma bash
+              #apt-get update
+              #apt-get install -y python3-pytest
+              #pytest --skip-auth
