@@ -20,8 +20,8 @@ jobs:
     - name: Build and Push
       run: |
         pwd
-        ls
-        export REPOSITORY=${DOCKER_USERNAME}/${{ secrets.DOCKER_REPOSITORY }}
+        #ls
+        #export REPOSITORY=${DOCKER_USERNAME}/${{ secrets.DOCKER_REPOSITORY }}
         export TAG=${GITHUB_SHA:0:7}
         docker-compose build
-        docker-compose push ${REPOSITORY}:${TAG}
+        docker-compose push fareesdevelope/fxuptimetest:${TAG} #${REPOSITORY}:${TAG}
