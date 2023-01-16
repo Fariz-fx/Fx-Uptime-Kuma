@@ -27,6 +27,9 @@ jobs:
 
           - name: Check running containers
             run: docker ps
+            
+          - name: Check container logs
+            run: docker logs -f fx-uptime-kuma
 
           - name: Run test suite
             run: docker exec fx-uptime-kuma pytest --skip-auth
