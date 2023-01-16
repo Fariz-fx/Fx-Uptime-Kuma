@@ -40,4 +40,8 @@ jobs:
             #shell: bash
 
           - name: Run test suite
-            run: docker exec fx-uptime-kuma pytest --skip-auth
+            run: |
+              docker exec fx-uptime-kuma bash
+              apt-get update
+              apt-get install -y python3-pytest
+              pytest --skip-auth
