@@ -26,4 +26,4 @@ jobs:
             run: docker ps
 
           - name: Run test suite
-            run: docker exec backend pytest --skip-auth
+            run: docker exec fx-uptime-kuma pytest --skip-auth
