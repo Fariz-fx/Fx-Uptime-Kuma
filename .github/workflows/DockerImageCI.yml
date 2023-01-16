@@ -13,6 +13,9 @@ jobs:
         steps:
           - name: 'Checkout GitHub Action'
             uses: actions/checkout@main
+            
+          - name: 'Run pytest'
+            run: pip install pytest
           
           - name: Build the docker-compose stack
             run: docker-compose up -d
