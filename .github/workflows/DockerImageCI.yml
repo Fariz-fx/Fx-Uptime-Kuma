@@ -1,0 +1,29 @@
+name: Docker Image CI
+
+on: 
+  #push:
+    #branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+  
+jobs:
+    Docker-build-:
+        runs-on: ubuntu-latest
+        steps:
+          - name: 'Checkout GitHub Action'
+            uses: actions/checkout@main
+          
+          - name: Build the docker-compose stack
+            run: docker-compose up -d
+            
+          - name: Sleep
+            uses: jakejarvis/wait-action@master
+            with:
+              time: '60s'
+
+          - name: Check running containers
+            run: docker ps
+
+          - name: Run test suite
+            run: docker exec backend pytest --skip-auth
